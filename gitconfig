@@ -1,0 +1,41 @@
+[init]
+  defaultBranch = main
+[user]
+  name = rouanw
+  email = rouan@carbontechlab.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+[diff]
+  renames = true
+[alias]
+  changes=diff --name-status -r
+  st=status
+  co=checkout
+  ci=commit
+  undo=checkout -f
+  pr=pull --rebase
+  pt=push --follow-tags
+  l=log
+  s=status
+  a=add -A
+  d=diff
+  dc=diff --cached
+  lg=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+  amend=commit --amend --no-edit
+  clean-branches="!git branch --merged | egrep -v \"(^\\*|master)\" | xargs git branch -d && git remote prune origin"
+  churn="!git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "\t" $2}'"
+[core]
+  excludesfile = ~/.gitignore
+[mirror]
+  summary = true
+[branch]
+  autosetupmerge = true
+[help]
+  autocorrect = 1
+[push]
+  default = current
