@@ -1,1 +1,1 @@
-plugins=(z zsh-autosuggestions)
+plugins=(git nvm z)
