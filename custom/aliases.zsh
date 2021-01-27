@@ -1,7 +1,7 @@
 # get here
 
-alias myalias="vi ~/projects/dotfiles/user_specific/rouan/aliases"
-alias mygitconfig="vi ~/projects/dotfiles/user_specific/rouan/gitconfig"
+alias myalias="vi ~/projects/zsh-config/custom/aliases.zsh"
+alias mygitconfig="vi ~/projects/zsh-config/gitconfig.zsh"
 
 # python
 alias simpleserver="python -m SimpleHTTPServer"
