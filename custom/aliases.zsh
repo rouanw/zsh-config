@@ -4,7 +4,7 @@ alias myalias="vi ~/projects/zsh-config/custom/aliases.zsh"
 alias mygitconfig="vi ~/projects/zsh-config/gitconfig.zsh"
 
 # python
-alias simpleserver="python -m SimpleHTTPServer"
+alias simpleserver="python -m http.server"
 
 # general
 copy_path_to_clipboard() {
