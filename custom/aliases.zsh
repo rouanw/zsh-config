@@ -98,6 +98,10 @@ alias docker_prune=prune_dangling_images
 
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
+# mobile
+
+alias rn="react-native"
+
 # poem of the day
 alias poemoftheday="rsstail -u http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText -1 -d -n 1 -N | html2text -utf8 | sed '/^ Poem of the Day/ s/$/ &\'$'\n/'
 "
