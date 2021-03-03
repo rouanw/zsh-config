@@ -52,13 +52,6 @@ open_on_github() {
 }
 alias gh_open=open_on_github $1
 
-# jenkins (tes)
-open_on_jenkins() {
-  app="$(basename `pwd`)"
-  open http://jenkins-native.tescloud.com/job/${app}
-}
-alias jenkins=open_on_jenkins
-
 # npm
 open_on_npm() {
   app="$(basename `pwd`)"
