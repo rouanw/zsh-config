@@ -2,7 +2,7 @@
   defaultBranch = main
 [user]
   name = rouanw
-  email = rouan@carbontechlab.com
+	email = rouanw@users.noreply.github.com
 [color]
   diff = auto
   status = auto
