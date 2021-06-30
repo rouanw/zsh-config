@@ -27,8 +27,8 @@ alias please=": &&"
 alias dark_mode="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"
 
 # productivity
-alias todo="code \"/Users/Rouan/Google Drive\"/todo.yml"
-alias podo="code \"/Users/Rouan/Google Drive\"/podo.yml"
+alias todo="code \"$HOME/Google Drive\"/todo.yml"
+alias podo="code \"$HOME/Google Drive\"/podo.yml"
 alias pomodoro="date && sleep 1500 && osascript -e 'display notification \"Pomodoro completed\" with title \"Pomodoro completed\" sound name \"Submarine\"' && echo pomodoro completed && date"
 
 alias pomodoro_break="date && sleep 300 && osascript -e 'display notification \"Break over\" with title \"Break over\" sound name \"Submarine\"' && echo break completed && date"
