@@ -1,4 +1,5 @@
 ln -sf /Users/$USER/projects/zsh-config/gitconfig ~/.gitconfig
+ln -sf /Users/$USER/projects/zsh-config/hyper.js ~/.hyper.js
 NVM_AUTOLOAD=1
 eval "$(rbenv init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
