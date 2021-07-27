@@ -1,1 +1,1 @@
-plugins=(git nvm z)
+plugins=(git nvm z git-open)

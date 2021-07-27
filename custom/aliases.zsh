@@ -44,14 +44,6 @@ alias g="git"
 alias gitconfig="vi .git/config"
 alias submodulepull="git submodule foreach git pull --ff-only"
 
-# github
-open_on_github() {
-  app="$(basename `pwd`)"
-  user=${1:-"rouanw"}
-  open https://github.com/${user}/${app}
-}
-alias gh_open=open_on_github $1
-
 # npm
 open_on_npm() {
   app="$(basename `pwd`)"
