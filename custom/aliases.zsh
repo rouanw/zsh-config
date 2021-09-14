@@ -29,6 +29,7 @@ alias flip="echo \"\n\n\n\n(╯°□°）╯︵ ┻━┻\n\n\n\n\""
 alias dark_mode="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"
 
 alias path="sed 's/:/\n/g' <<< \"$PATH\""
+alias untar="tar -xvf"
 
 # productivity
 alias todo="code \"$HOME/Google Drive\"/todo.yml"
