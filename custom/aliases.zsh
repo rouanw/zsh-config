@@ -96,6 +96,8 @@ alias docker_prune=prune_dangling_images
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
 alias tf=terraform
+alias k=kubectl
+
 
 # aws
 alias lws="aws --endpoint-url http://localhost:4566 --profile localstack"
