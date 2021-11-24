@@ -133,6 +133,7 @@ module.exports = {
     //   `project#1.0.1`
     plugins: [
         'hyper-solarized-light',
+        // 'hyper-solarized-dark',
         'hypercwd',
         // 'hyper-search'
     ],
