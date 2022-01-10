@@ -19,9 +19,9 @@ NVM_LAZY=1
 # eval "$(rbenv init -)"
 
 # Uncomment when you're using Python
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init --path)"
-# fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
 
 # Uncomment when you're using Ruby Terraform
 # autoload -U +X bashcompinit && bashcompinit
