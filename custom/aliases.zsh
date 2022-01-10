@@ -97,6 +97,12 @@ prune_dangling_images() {
  docker rmi $(docker images -f "dangling=true" -q)
 }
 alias docker_prune=prune_dangling_images
+docker_container_clean() {
+  docker container stop $(docker container ls -aq)
+  docker container rm $(docker container ls -aq)
+}
+alias d_clean_containers=docker_container_clean
+
 
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
