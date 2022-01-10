@@ -4,6 +4,10 @@
 // See https://hyper.is#cfg for all currently supported options.
 module.exports = {
     config: {
+        hyperPrefersColorScheme: {
+            light: 'hyper-solarized-light',
+            dark:'hyper-solarized-dark',
+        },
         // choose either `'stable'` for receiving highly polished,
         // or `'canary'` for less polished but more frequent updates
         updateChannel: 'stable',
@@ -132,10 +136,11 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     plugins: [
+        'hyper-prefers-color-scheme',
+        'hyper-solarized-dark',
         'hyper-solarized-light',
-        // 'hyper-solarized-dark',
-        'hypercwd',
         // 'hyper-search'
+        'hypercwd',
     ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
