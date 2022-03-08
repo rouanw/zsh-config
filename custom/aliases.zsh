@@ -112,6 +112,7 @@ alias k=kubectl
 
 # aws
 alias lws="aws --endpoint-url http://localhost:4566 --profile localstack"
+alias localstack="docker run --rm -it -p 4566:4566 -p 4571:4571 localstack/localstack"
 
 # mobile
 

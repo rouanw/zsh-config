@@ -23,7 +23,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
-# Uncomment when you're using Ruby Terraform
+# Uncomment when you're using Terraform
 # autoload -U +X bashcompinit && bashcompinit
 # autoload -Uz compinit && compinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
