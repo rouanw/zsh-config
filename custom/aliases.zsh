@@ -87,7 +87,7 @@ npm_run_in_sub_directories() {
 }
 alias nrun_d=npm_run_in_sub_directories
 
-# docker
+# infra
 docker_login() {
   prefix=$1
   docker exec -t -i `docker ps | grep $prefix | awk '{print $1}'` bash
@@ -103,25 +103,16 @@ docker_container_clean() {
 }
 alias d_clean_containers=docker_container_clean
 
-
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
 alias tf=terraform
 alias k=kubectl
 
-
-# aws
 alias lws="aws --endpoint-url http://localhost:4566 --profile localstack"
 alias localstack="docker run --rm -it -p 4566:4566 -p 4571:4571 localstack/localstack"
 
 # mobile
-
 alias rn="react-native"
-
-# poem of the day
-alias poemoftheday="rsstail -u http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText -1 -d -n 1 -N | html2text -utf8 | sed '/^ Poem of the Day/ s/$/ &\'$'\n/'
-"
-alias poemsnippet="rsstail -u http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText -1 -d -n 1 -N | html2text -utf8 | head -5 | tail +2"
 
 # personal
 alias finances="cd ~/projects/finances && open http://localhost:8000/finances.html && simpleserver"
