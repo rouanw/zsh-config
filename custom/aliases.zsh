@@ -108,6 +108,12 @@ alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 alias tf=terraform
 alias k=kubectl
 
+k8s_login() {
+  pod=$1
+  kubectl exec --stdin --tty $1 -- /bin/sh
+}
+alias kl=k8s_login
+
 alias lws="aws --endpoint-url http://localhost:4566 --profile localstack"
 alias localstack="docker run --rm -it -p 4566:4566 -p 4571:4571 localstack/localstack"
 
