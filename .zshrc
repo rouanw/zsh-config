@@ -3,6 +3,7 @@
 export ZSH="/Users/rouan/.oh-my-zsh"
 ZSH_THEME="spaceship"
 ZSH_CUSTOM=~/projects/zsh-config/custom
+NVM_AUTOLOAD=1
 
 source ~/projects/zsh-config/plugins.zsh
 source $ZSH/oh-my-zsh.sh
@@ -11,9 +12,6 @@ export PATH="$PATH:/Users/rouan/.local/bin"
 
 ln -sf /Users/$USER/projects/zsh-config/gitconfig ~/.gitconfig
 ln -sf /Users/$USER/projects/zsh-config/hyper.js ~/.hyper.js
-
-NVM_AUTOLOAD=1
-NVM_LAZY=1
 
 # Uncomment when you're using Ruby
 # eval "$(rbenv init -)"
