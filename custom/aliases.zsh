@@ -90,7 +90,7 @@ alias nrun_d=npm_run_in_sub_directories
 # infra
 docker_login() {
   prefix=$1
-  docker exec -t -i `docker ps | grep $prefix | awk '{print $1}'` bash
+  docker exec -t -i `docker ps | grep $prefix | awk '{print $1}'` sh
 }
 alias dl=docker_login
 prune_dangling_images() {
@@ -105,6 +105,7 @@ alias d_clean_containers=docker_container_clean
 
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
+alias dc=docker-compose
 alias tf=terraform
 alias k=kubectl
 
