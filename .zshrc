@@ -10,7 +10,7 @@ NVM_AUTOLOAD=1
 source ~/projects/zsh-config/plugins.zsh
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$PATH:/Users/rouan/.local/bin"
+export PATH="$PATH:/Users/rouan/.local/bin:/Users/rouan/.software-bin/bin"
 
 ln -sf /Users/$USER/projects/zsh-config/gitconfig ~/.gitconfig
 ln -sf /Users/$USER/projects/zsh-config/hyper.js ~/.hyper.js
