@@ -1,6 +1,8 @@
 # zmodload zsh/zprof # Uncomment and run `zprof` to do some profiling
 
 export ZSH="/Users/rouan/.oh-my-zsh"
+SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_VERSION_SHOW=false
 ZSH_THEME="spaceship"
 ZSH_CUSTOM=~/projects/zsh-config/custom
 NVM_AUTOLOAD=1
