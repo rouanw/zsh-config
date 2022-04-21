@@ -14,11 +14,12 @@ alias copypath=copy_path_to_clipboard
 alias bashprofile="vi ~/.bash_profile"
 alias terminal="open -a Terminal "`pwd`""
 alias ff="grep -rnw --exclude-dir={node_modules,dist,.git} . -e $1"
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
-alias timezsh=timezsh
+
+#timezsh() {
+#  shell=${1-$SHELL}
+#  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+#}
+#alias timezsh=timezsh
 
 bookmark_with_cd_args() {
   name=$1
@@ -114,6 +115,17 @@ k8s_login() {
   kubectl exec --stdin --tty $1 -- /bin/sh
 }
 alias kl=k8s_login
+
+k8s_postgres() {
+  pod=$1
+  name="${2:-psql}"
+  overrides="{\"spec\": {\"containers\": [{\"image\":\"alpine\", \"name\": \"${name}\", \"envFrom\": [{\"secretRef\": {\"name\": \"${pod}\"}}] }] }}"
+  kubectl run --rm -it --restart=Never --image=alpine \
+      --override-type=strategic \
+      --overrides ${overrides} ${name} -- \
+      /bin/sh -c 'apk add --no-cache --no-progress -q postgresql12 && psql "${DB_URI:-postgres://${DB_USER_NAME}:${DB_USER_PASSWORD}@${DB_HOST}/${DB_NAME}}"'
+}
+alias k_psql=k8s_postgres
 
 alias lws="aws --endpoint-url http://localhost:4566 --profile localstack"
 alias localstack="docker run --rm -it -p 4566:4566 -p 4571:4571 localstack/localstack"
