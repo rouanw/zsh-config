@@ -15,11 +15,11 @@ alias bashprofile="vi ~/.bash_profile"
 alias terminal="open -a Terminal "`pwd`""
 alias ff="grep -rnw --exclude-dir={node_modules,dist,.git} . -e $1"
 
-#timezsh() {
-#  shell=${1-$SHELL}
-#  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-#}
-#alias timezsh=timezsh
+time_shell() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+alias timezsh=time_shell
 
 bookmark_with_cd_args() {
   name=$1
