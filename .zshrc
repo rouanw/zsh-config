@@ -5,7 +5,7 @@ SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false
 ZSH_THEME="spaceship"
 ZSH_CUSTOM=~/projects/zsh-config/custom
-NVM_AUTOLOAD=1
+eval "$(fnm env --use-on-cd)"
 
 source ~/projects/zsh-config/plugins.zsh
 source $ZSH/oh-my-zsh.sh
