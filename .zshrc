@@ -19,9 +19,9 @@ ln -sf /Users/$USER/projects/zsh-config/hyper.js ~/.hyper.js
 # eval "$(rbenv init -)"
 
 # Uncomment when you're using Python
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Uncomment when you're using Terraform
 # autoload -U +X bashcompinit && bashcompinit
