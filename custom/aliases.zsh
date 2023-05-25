@@ -13,6 +13,7 @@ copy_path_to_clipboard() {
 alias copypath=copy_path_to_clipboard
 alias bashprofile="vi ~/.bash_profile"
 alias terminal="open -a Terminal "`pwd`""
+alias warp="open -a Warp.app"
 alias ff="grep -rnw --exclude-dir={node_modules,dist,.git} . -e $1"
 
 time_shell() {
