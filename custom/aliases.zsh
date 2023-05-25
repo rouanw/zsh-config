@@ -83,6 +83,8 @@ alias pmsvcrestart=restart_pm2_svc
 alias httpstatuscode="node --print \"http.STATUS_CODES\" | grep ${1}"
 alias httpstatuscodes="node --print \"http.STATUS_CODES\""
 
+alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
+
 npm_run_in_sub_directories() {
   command=$1
   for d in ./*/ ; do (grep -q $command "${d}/package.json" && cd "$d" && npm run $command); done
