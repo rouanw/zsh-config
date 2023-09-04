@@ -55,6 +55,7 @@ alias space="docker system prune --volumes && brew cleanup && rm -r ~/Library/Ca
 alias g="git"
 alias gitconfig="vi .git/config"
 alias submodulepull="git submodule foreach git pull --ff-only"
+alias gitpullall='find . -maxdepth 2 -type d -name ".git" -execdir bash -c '\''branch="$(git symbolic-ref --short HEAD 2>/dev/null || echo "detached")"; if [ "$branch" != "main" ] && [ "$branch" != "master" ]; then git checkout -q main || git checkout -q master; fi; git pull || echo -e "\\n*** Failed to pull in $(pwd)\\n"'\'' \;'
 
 # npm
 open_on_npm() {
