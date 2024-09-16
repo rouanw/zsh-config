@@ -15,6 +15,7 @@ alias bashprofile="vi ~/.bash_profile"
 alias terminal="open -a Terminal "`pwd`""
 alias warp="open -a Warp.app"
 alias ff="grep -rnw --exclude-dir={node_modules,dist,.git} . -e $1"
+alias cv=cdargs
 
 time_shell() {
   shell=${1-$SHELL}
@@ -49,13 +50,15 @@ alias pomodoro_long_break="date && sleep 1200 && osascript -e 'display notificat
 
 alias pomodoro_snooze="date && sleep 120 && osascript -e 'display notification \"Snooze complete\" with title \"Let it go\" sound name \"Submarine\"' && echo snooze completed"
 
-alias space="docker system prune --volumes && brew cleanup && rm -r ~/Library/Caches/com.spotify.client && rm -r ~/Library/Caches/Yarn"
+alias space="docker system prune --volumes && brew cleanup --prune=all && rm -rf ~/.npm && open ~/Library/Caches/"
 
 # git
 alias g="git"
 alias gitconfig="vi .git/config"
 alias submodulepull="git submodule foreach git pull --ff-only"
 alias gitpullall='find . -maxdepth 2 -type d -name ".git" -execdir bash -c '\''branch="$(git symbolic-ref --short HEAD 2>/dev/null || echo "detached")"; if [ "$branch" != "main" ] && [ "$branch" != "master" ]; then git checkout -q main || git checkout -q master; fi; git pull || echo -e "\\n*** Failed to pull in $(pwd)\\n"'\'' \;'
+
+alias strongbox_check="git diff-index -p origin/master"
 
 # npm
 open_on_npm() {
@@ -68,6 +71,8 @@ alias upgrade_npm="nvm ls --no-colors | grep -v -E -e '.+->' | sed 's/[-*> ]//g'
 
 # node
 alias n="npm"
+
+alias tsx="npx ts-node --compiler-options '{\"lib\":[\"dom\"]}'"
 
 restart_pm2_app() {
   app="$(basename `pwd`)"
@@ -91,6 +96,11 @@ npm_run_in_sub_directories() {
   for d in ./*/ ; do (grep -q $command "${d}/package.json" && cd "$d" && npm run $command); done
 }
 alias nrun_d=npm_run_in_sub_directories
+
+npm_install_in_sub_directories() {
+  for d in ./*/ ; do (grep -q $command "${d}/package.json" && cd "$d" && npm install); done
+}
+alias nrun_i=npm_install_in_sub_directories
 
 # infra
 docker_login() {
