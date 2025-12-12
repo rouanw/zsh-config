@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/Users/rouan/.local/bin:/Users/rouan/.software-bin/bin:/Users/rouan/go/bin:/Applications/WebStorm.app/Contents/MacOS:/Users/rouan/Library/Android/sdk/platform-tools"
 
 ln -sf /Users/$USER/projects/zsh-config/gitconfig ~/.gitconfig
+ln -sf /Users/$USER/projects/zsh-config/gitignore ~/.gitignore
 ln -sf /Users/$USER/projects/zsh-config/hyper.js ~/.hyper.js
 
 # Uncomment when you're using Ruby
