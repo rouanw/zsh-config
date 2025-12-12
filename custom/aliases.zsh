@@ -60,7 +60,7 @@ alias gitpullall='find . -maxdepth 2 -type d -name ".git" -execdir bash -c '\''b
 
 alias strongbox_check="git diff-index -p origin/master"
 
-# npm
+# node
 open_on_npm() {
   app="$(basename `pwd`)"
   open https://www.npmjs.com/package/${app}
@@ -69,8 +69,15 @@ alias n_open=open_on_npm
 
 alias upgrade_npm="nvm ls --no-colors | grep -v -E -e '.+->' | sed 's/[-*> ]//g' | while read in; do nvm exec "$in" npm i -g npm; done"
 
-# node
-alias n="npm"
+npm_or_pnpm() {
+  if [ -f "pnpm-lock.yaml" ] || [ -f "$(git rev-parse --show-toplevel 2>/dev/null)/pnpm-lock.yaml" ]; then
+    command pnpm "$@"
+  else
+    command npm "$@"
+  fi
+}
+
+alias n="npm_or_pnpm"
 
 alias tsx="npx ts-node --compiler-options '{\"lib\":[\"dom\"]}'"
 
@@ -146,6 +153,11 @@ alias localstack="docker run --rm -it -p 4566:4566 -p 4571:4571 localstack/local
 
 # mobile
 alias rn="react-native"
+
+# claude code
+alias claude='~/.claude-profiles/launch-pro.sh'  # default to Pro
+alias claude-pro='~/.claude-profiles/launch-pro.sh'
+alias claude-haven='~/.claude-profiles/launch-haven.sh'
 
 # personal
 alias finances="cd ~/projects/finances && open http://localhost:8000/finances.html && simpleserver"
