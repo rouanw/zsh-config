@@ -3,6 +3,7 @@
 export ZSH="/Users/rouan/.oh-my-zsh"
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false
+SPACESHIP_PROMPT_ASYNC=false
 ZSH_THEME="spaceship"
 ZSH_CUSTOM=~/projects/zsh-config/custom
 setopt HIST_IGNORE_SPACE
