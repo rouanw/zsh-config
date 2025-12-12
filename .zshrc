@@ -25,7 +25,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Uncomment when you're using Terraform
-# autoload -U +X bashcompinit && bashcompinit
-# autoload -Uz compinit && compinit
-# complete -o nospace -C /usr/local/bin/terraform terraform
+ANDROID_HOME=/Users/rouan/Library/Android/sdk
