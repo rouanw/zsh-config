@@ -109,6 +109,16 @@ npm_install_in_sub_directories() {
 }
 alias nrun_i=npm_install_in_sub_directories
 
+jwt_decode() {
+  if [ -z "$1" ]; then
+    # Read from stdin if no argument
+    local jwt=$(cat)
+  else
+    local jwt="$1"
+  fi
+  node -e "const t=process.argv[1].split('.'); console.log(JSON.stringify({header:JSON.parse(Buffer.from(t[0],'base64')),payload:JSON.parse(Buffer.from(t[1],'base64'))},null,2))" "$jwt"
+}
+
 # infra
 docker_login() {
   prefix=$1
